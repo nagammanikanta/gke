@@ -3,7 +3,7 @@ data "google_project" "project" {}
 
 
 resource "google_kms_crypto_key_iam_member" "kms-secret-binding" {
-  kms_key_name= "kms-key"
+  name= "kms-key"
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   member        = "serviceAccount:terraform-${data.google_project.project.number}@data-rainfall-396303.iam.gserviceaccount.com"
 }
