@@ -29,5 +29,5 @@ resource "google_kms_key_ring" "my-key-ring" {
 
 resource "google_kms_crypto_key" "my-crypto-key" {
   name     = "my-crypto-key"
-  key_ring = google_kms_key_ring.my_key_ring.id
+  key_ring = google_kms_key_ring.my-key-ring.id
 }
