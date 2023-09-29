@@ -1,4 +1,4 @@
-data "google_project" "project" {}
+
 
 resource "google_kms_crypto_key_iam_member" "kms-secret-binding" {
   crypto_key_id = "kms-key"
