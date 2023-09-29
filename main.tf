@@ -3,7 +3,7 @@ data "google_project" "project" {}
 
 
 resource "google_kms_crypto_key_iam_member" "kms-secret-binding" {
-  crypto_key_id = "kms-key"
+  crypto_key_id = "cro-kms-key"
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   member        = "serviceAccount:terraform-${data.google_project.project.number}@data-rainfall-396303.iam.gserviceaccount.com"
 }
@@ -14,7 +14,7 @@ resource "google_secret_manager_secret" "secret-with-automatic-cmek" {
   replication {
     auto {
       customer_managed_encryption {
-        kms_key_name = "kms-key"
+        kms_key_name = "cro-kms-key"
       }
     }
   }
