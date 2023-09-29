@@ -1,6 +1,5 @@
-data "google_project" "project" {
-     project     = "data-rainfall-396303"
-}
+data "google_project" "project" {}
+
 
 
 resource "google_kms_crypto_key_iam_member" "kms-secret-binding" {
