@@ -1,16 +1,18 @@
-resource "vault_mount" "kvv1" {
-  path        = "kvv1"
-  type        = "kv"
-  options     = { version = "1" }
-  description = "KV Version 1 secret engine mount"
+esource "google_secret_manager_secret" "secret-basic" {
+  secret_id = "secret-version"
+
+  labels = {
+    label = "my-label"
+  }
+
+  replication {
+    auto {}
+  }
 }
 
-resource "vault_kv_secret" "secret" {
-  path = "${vault_mount.kvv1.path}/secret"
-  data_json = jsonencode(
-  {
-    zip = "zap",
-    foo = "bar"
-  }
-  )
+
+resource "google_secret_manager_secret_version" "secret-version-basic" {
+  secret = google_secret_manager_secret.secret-basic.id
+
+  secret_data = "secret-data"
 }
