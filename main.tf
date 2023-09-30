@@ -4,7 +4,7 @@ resource "google_kms_key_ring" "key-ring-tf" {
 }
 resource "google_kms_crypto_key" "key" {
   name            = "crypto-key-example"
-  key_ring        = google_kms_key_ring.keyring.id
+  key_ring        = google_kms_key_ring.key-ring-tf.name
   
   lifecycle {
     prevent_destroy = false
