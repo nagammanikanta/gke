@@ -1,5 +1,5 @@
-resource "google_kms_key_ring" "keyring" {
-  name     = "keyring-example"
+resource "google_kms_key_ring" "key-ring-tf" {
+  name     = "key-ring-tf"
   location = "global"
 }
 resource "google_kms_crypto_key" "key" {
