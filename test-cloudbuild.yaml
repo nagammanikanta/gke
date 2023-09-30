@@ -6,7 +6,7 @@ steps:
     args: 
       - '-c'
       - |
-        gcloud builds submit --config cloudbuild.yaml
+        gcloud builds submit --config test-cloudbuild.yaml
 
   - id: cleanup
     name: gcr.io/google.com/cloudsdktool/cloud-sdk
