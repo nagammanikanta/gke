@@ -3,7 +3,7 @@ resource "google_cloudbuild_trigger" "filename-trigger" {
 
   trigger_template {
     branch_name = "main"
-    repo_name   = "gke"
+    repo_name   = "nagammanikanta/gke"
   }
 
   substitutions = {
