@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  gke:
+    image: gke
+    build:
+      context: .
+      dockerfile: ./Dockerfile
