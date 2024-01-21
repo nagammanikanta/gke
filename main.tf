@@ -7,7 +7,7 @@ resource "google_storage_bucket" "my-bucket" {
 
 resource "google_compute_instance" "ne-tf" {
     project = "leafy-summer-405104"
-    zone = "us-central1-a"
+    
     name = "nexus"
     machine_type = "e2-medium"
     boot_disk {
@@ -37,5 +37,6 @@ resource "google_compute_subnetwork" "subnet-terra" {
     name = "subnet-demo"
     ip_cidr_range = "10.0.2.0/24"
     region = "us-central1"
+    
     network = google_compute_network.vpc-terra.id  
 }
