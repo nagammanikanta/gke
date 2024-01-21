@@ -35,7 +35,8 @@ resource "random_shuffle" "version" {
 }
 
 module "gke" {
-  source                     = "terraform-google-modules/kubernetes-engine/modules/safer-cluster/"
+  source                     = "./modules/gke"
+  source_path                = "github.com/terraform-google-modules/kubernetes-engine/modules/safer-cluster/"
   project_id                 = var.project_id
   name                       = "${local.cluster_type}-cluster-${random_string.suffix.result}"
   regional                   = true
