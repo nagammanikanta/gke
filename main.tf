@@ -12,7 +12,7 @@ resource "google_compute_instance" "ne-tf" {
     machine_type = "e2-medium"
     boot_disk {
         initialize_params {
-            image = "debian-cloud/debian-11"
+            image = "debian-11-bullseye-v20220719"
         }
     }
     network_interface {
