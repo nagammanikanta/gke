@@ -5,7 +5,7 @@ resource "google_storage_bucket" "my-bucket" {
  force_destroy = true
 }
 
-resource "google_comupute_instance" "ne-tf" {
+resource "google_compute_instance" "ne-tf" {
     project = "leafy-summer-405104"
     zone = "us-central1-a"
     name = "nexus"
