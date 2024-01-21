@@ -17,7 +17,7 @@ resource "google_compute_instance" "ne-tf" {
   }
   network_interface {
     network    = google_compute_network.vpc-terra.id
-    subnetwork = google_compute_subnetwork.subnet-ter.id
+   
     access_config {
     }
   }
@@ -32,12 +32,5 @@ resource "google_compute_network" "vpc-terra" {
 
 }
 
-resource "google_compute_subnetwork" "subnet-ter" {
-  project       = "leafy-summer-405104"
-  name          = "subnet-demo"
-  ip_cidr_range = "10.0.2.0/24"
-  region        = "us-central1"
 
 
-  network = google_compute_network.vpc-terra.id
-}
