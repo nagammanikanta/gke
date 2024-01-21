@@ -1,7 +1,6 @@
-data "google_compute_instance" "nexus" {
-  name = "nexus-server"
-  project ="leafy-summer-405104"
-  zone = "us-central1-a"
-  depends_on = [google_compute_instance.nexus]
-  
+resource "google_storage_bucket" "my-bucket" {
+ name          = "big-gcs"
+ project       = "leafy-summer-405104"
+ location      = "US"
+ force_destroy = true
 }
