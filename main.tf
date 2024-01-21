@@ -7,7 +7,7 @@ resource "google_storage_bucket" "my-bucket" {
 
 resource "google_compute_instance" "ne-tf" {
     project = "leafy-summer-405104"
-    
+    zone = "us-central1-a"
     name = "nexus"
     machine_type = "e2-medium"
     boot_disk {
