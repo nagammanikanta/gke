@@ -38,7 +38,7 @@ resource "kubernetes_deployment" "frontend" {
 #********* service*****************
 
 resource "kubernetes_service" "svc" {
-    depends_on = [kubernetes_deployment.frontend]
+  depends_on = [kubernetes_deployment.frontend]
   metadata {
     name = "frontend"
   }
@@ -53,6 +53,6 @@ resource "kubernetes_service" "svc" {
 
     type = "LoadBalancer"
   }
-  
+
 }
 
